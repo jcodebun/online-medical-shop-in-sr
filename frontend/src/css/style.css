@@ -1,0 +1,24 @@
+.homeContentWrapper{
+    background-image: url('https://t4.ftcdn.net/jpg/01/18/42/59/360_F_118425925_n2GZJR42P1ai0p3qYmNe375LCd6kQ9R4.jpg'); 
+    background-size: cover; 
+    height: 683px;
+    }
+    .overlayBox{
+    padding: 200px 0px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    }
+    
+    .container{
+    width: 1200px;
+    margin: 0px auto;
+    }
+    
+    
+    .welcomeText{
+    color:#FFF;
+    font-size: 75px;
+    font-family: raleway-bold;
+    line-height: 90px;
+    }

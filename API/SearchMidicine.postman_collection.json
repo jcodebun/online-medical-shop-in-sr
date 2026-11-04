@@ -1,0 +1,476 @@
+{
+	"info": {
+		"_postman_id": "a73953d4-591b-4494-ae79-830a9ce83077",
+		"name": "SearchMidicine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12537478"
+	},
+	"item": [
+		{
+			"name": "User_Admin_Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":\"user\",\r\n\"email\": \"user@gmail.com\",\r\n\"password\": \"user123\",\r\n\"username\": \"newuser123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/api/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login and Create Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Admin\",\r\n    \"password\" : \"Admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/api/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Welcome",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaHVwaTEyMyIsImV4cCI6MTY2NDU2OTU1OSwiaWF0IjoxNjY0NTUxNTU5fQ.aozalHvFXvsQiXrvXrVVWRj0rY00W-WGAbO9ZA3gT80b0PkMVP8J5hu-LIa1KGTYLxy-iL-MNcmugUWTq0X1Yw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaHVwaTEyMyIsImV4cCI6MTY2NDQ0MjQ2NSwiaWF0IjoxNjY0NDI0NDY1fQ.n88My4lNBLAKmRe_UepS4WSRf6IvAjAfj4dR43S5-XPROA3IoROXjJZtbYvlS1KoDm_ckjfS8g7FAiM_4g4glg",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9091/api/welcome?auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"welcome"
+					],
+					"query": [
+						{
+							"key": "auth",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Medicine",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaHVwaTEyMyIsImV4cCI6MTY2NDU2OTU1OSwiaWF0IjoxNjY0NTUxNTU5fQ.aozalHvFXvsQiXrvXrVVWRj0rY00W-WGAbO9ZA3gT80b0PkMVP8J5hu-LIa1KGTYLxy-iL-MNcmugUWTq0X1Yw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"medicineName\":\"dolo\",\r\n    \"companyName\": \"fggfhfhgfhfghfh Pha\",\r\n    \"quantity\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/api/updatemedicine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"updatemedicine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Medicine",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaHVwaTEyMyIsImV4cCI6MTY2NDU2OTU1OSwiaWF0IjoxNjY0NTUxNTU5fQ.aozalHvFXvsQiXrvXrVVWRj0rY00W-WGAbO9ZA3gT80b0PkMVP8J5hu-LIa1KGTYLxy-iL-MNcmugUWTq0X1Yw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"medicineName\":\"dfdf\",\r\n    \"companyName\": \"Sun Pha\",\r\n    \"quantity\": 50,\r\n    \"price\": 500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/api/addmedicine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"addmedicine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Medicine",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaHVwaTEyMyIsImV4cCI6MTY2NDU2OTU1OSwiaWF0IjoxNjY0NTUxNTU5fQ.aozalHvFXvsQiXrvXrVVWRj0rY00W-WGAbO9ZA3gT80b0PkMVP8J5hu-LIa1KGTYLxy-iL-MNcmugUWTq0X1Yw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/api/deletemedicine?id=11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"deletemedicine"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Medicine",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaHVwaTEyMyIsImV4cCI6MTY2NDU2OTU1OSwiaWF0IjoxNjY0NTUxNTU5fQ.aozalHvFXvsQiXrvXrVVWRj0rY00W-WGAbO9ZA3gT80b0PkMVP8J5hu-LIa1KGTYLxy-iL-MNcmugUWTq0X1Yw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9091/api/getmedicine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"getmedicine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Medicine By Name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaHVwaTEyMyIsImV4cCI6MTY2NDU2OTU1OSwiaWF0IjoxNjY0NTUxNTU5fQ.aozalHvFXvsQiXrvXrVVWRj0rY00W-WGAbO9ZA3gT80b0PkMVP8J5hu-LIa1KGTYLxy-iL-MNcmugUWTq0X1Yw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9091/api/findmedicine?medicineName=dolo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"findmedicine"
+					],
+					"query": [
+						{
+							"key": "medicineName",
+							"value": "dolo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Createorder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMTIzNCIsImV4cCI6MTY2NDU3MDA4MywiaWF0IjoxNjY0NTUyMDgzfQ.npm5vChvcSJ-C8o2634I_Fg1QLMSZcYRhaeZjk-tjcNtTg10eBMSVCV2N7vVqP9qT4INOwewj0DLHcjEnlmHgQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"medicineid\": 2,\r\n    \"userid\": 2,\r\n    \"quantity\": 50,\r\n    \"medicineName\": \"desp\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/api/user/createorder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"user",
+						"createorder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMTIzNCIsImV4cCI6MTY2NDU3MDA4MywiaWF0IjoxNjY0NTUyMDgzfQ.npm5vChvcSJ-C8o2634I_Fg1QLMSZcYRhaeZjk-tjcNtTg10eBMSVCV2N7vVqP9qT4INOwewj0DLHcjEnlmHgQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderid\": 12,\r\n    \"cardNumber\": \"4645665464568888\",\r\n    \"amount\": 1500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/api/user/createpayment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"user",
+						"createpayment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTY5NzcwOTk3MSwiaWF0IjoxNjk3NjkxOTcxfQ.sfWE7uYR7ozWqOtG5nxqatT_3X8MDfjjtWYwO65tqybjcQNxWxZ3hZ1ODIJfA9klaiXgwDZ9YoIKPU4AHUSM-A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9091/api/orderlist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"orderlist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Order By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9091/api/order?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"order"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9091/api/user/createpayment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"user",
+						"createpayment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdersByUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9091/api/orderlist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"orderlist"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
